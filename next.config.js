@@ -1,8 +1,10 @@
+const isProd = process.env.NODE_ENV === 'production';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/nextjs-github-pages',
-  assetPrefix: '/nextjs-github-pages/',
+  basePath: isProd ? '/nextjs-github-pages' : '',
+  assetPrefix: isProd ? '/nextjs-github-pages/' :  '',
   images: {
     unoptimized: true,
   },
